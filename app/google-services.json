@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "210921105451",
+    "project_id": "foodizapp-7cd3f",
+    "storage_bucket": "foodizapp-7cd3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210921105451:android:f6c9df6a2ba9a502fd226e",
+        "android_client_info": {
+          "package_name": "com.mountreachsolution.foodizapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVT9b36n9Xl6nOzpUxj1ZwibEJHIGW6fU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

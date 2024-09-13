@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light_grey"
+    android:gravity="center">
+    <ImageView
+        android:layout_width="250sp"
+        android:layout_height="250sp"
+        android:id="@+id/ivNointernetConnection"
+        android:layout_gravity="center"
+        android:layout_marginTop="30sp"
+        android:src="@drawable/icon_no_internet"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Oops!!!"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/almendra"
+        android:gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColor="@color/red"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Internet Connection"
+        android:textStyle="normal"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginTop="10sp"
+        android:textColor="@color/light_red"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please Check Your Connection"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_marginTop="10sp"
+        />
+
+<androidx.appcompat.widget.AppCompatButton
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="RETRY"
+    android:layout_gravity="center"
+    android:layout_margin="60sp"
+    android:background="@drawable/btn_bg_shape"
+    android:id="@+id/btnRetry"
+    android:textSize="18sp"
+    android:textColor="@color/white"
+    android:textStyle="bold"/>
+
+
+</LinearLayout>
