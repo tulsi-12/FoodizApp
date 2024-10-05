@@ -201,20 +201,28 @@ public class LoginActivity extends AppCompatActivity {
         params.put("username",etusername.getText().toString());
         params.put("password",etpassword.getText().toString());
 
-        client.post("http://192.168.164.99:80/FoodizAPI/userlogin.php",params,new JsonHttpResponseHandler(){
+        client.post("http://192.168.113.99:80/FoodizAPI/userlogin.php",params,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 try {
                     String status = response.getString("success");
-                    if(status.equals("1")){
+                    String userrole= response.getString("userrole");
+                    if(status.equals("1") && userrole.equals("user")){
                         progressDialog.dismiss();
                         Toast.makeText(LoginActivity.this,"Login Successfully Done ",Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                         editor.putBoolean("isLogin",true).commit();
                         editor.putString("username",etusername.getText().toString()).commit();
                         startActivity(i);
-                    } else {
+                    }
+                    else if(status.equals("1") && userrole.equals("admin")){
+                        progressDialog.dismiss();
+                        Toast.makeText(LoginActivity.this,"Login Successfully Done ",Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(LoginActivity.this, AdminHomeActivity.class);
+                        startActivity(i);
+                    }
+                    else {
                      Toast.makeText(LoginActivity.this,"Invalid Username or Password",Toast.LENGTH_SHORT).show();
                      progressDialog.dismiss();
                     }

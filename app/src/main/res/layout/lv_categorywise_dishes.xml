@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvCategoryWiseDish"
+        app:cardBackgroundColor="@color/light_grey"
+        app:cardCornerRadius="16sp"
+        app:cardElevation="16sp"
+        android:layout_margin="16sp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16sp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/ivCategoryWiseDishImage"
+                android:src="@drawable/pizza_cover"
+                android:scaleType="fitXY"
+
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:id="@+id/tvCategoryWiseDishRestaurantName"
+                android:text="Restaurant Name"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/almendra"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="4sp"
+                />
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:id="@+id/tvCategoryWiseDishRestaurantRating"
+                    android:text="4.2"
+                    android:gravity="center"
+                    android:background="#08870E"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/almendra"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginLeft="4sp"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCategoryWiseDishDishName"
+                android:text="Dish Name"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/almendra"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="4sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvCategoryWiseDishDishcategory"
+                    android:text="Dish Category"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/almendra"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginLeft="4sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvCategoryWiseDishDishprice"
+                    android:text="Dish Price"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/almendra"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginLeft="100sp"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCategoryWiseDishDishOffer"
+                android:text="Dish Offer"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/almendra"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="4sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCategoryWiseDishDishDescription"
+                android:text="Dish Description"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/almendra"
+                android:layout_marginTop="10sp"
+                android:layout_marginLeft="4sp"
+                />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

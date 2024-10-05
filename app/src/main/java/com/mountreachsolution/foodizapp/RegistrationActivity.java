@@ -120,7 +120,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 params.put("username",etUsername.getText().toString());
                 params.put("password",etPassword.getText().toString());
 
-                client.post("http:// 192.168.43.102:80/FoodizAPI/userregister.php",params,new JsonHttpResponseHandler(){
+                client.post("http://192.168.113.99:80/FoodizAPI/userregister.php",params,new JsonHttpResponseHandler(){
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         super.onSuccess(statusCode, headers, response);

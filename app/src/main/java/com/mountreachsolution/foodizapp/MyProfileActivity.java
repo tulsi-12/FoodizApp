@@ -1,9 +1,11 @@
 package com.mountreachsolution.foodizapp;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +32,7 @@ import cz.msebera.android.httpclient.Header;
 public class MyProfileActivity extends AppCompatActivity {
 
     ImageView ivProfilePhoto;
-    AppCompatButton acbtnEditProfile;
+    AppCompatButton acbtnChangePhoto, acbtnUpdateProfile;
     TextView tvName,tvMobileNo,tvEmailId,tvUsername;
 
     ProgressDialog progressDialog;
@@ -44,14 +46,17 @@ public class MyProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_profile);
 
         ivProfilePhoto = findViewById(R.id.ivMyProfileProfilePhoto);
-        acbtnEditProfile = findViewById(R.id.acbtnMyProfileeditprofiele);
+        acbtnChangePhoto = findViewById(R.id.acbtnMyProfileeditprofiele);
         tvName=findViewById(R.id.tvMyProfileName);
         tvMobileNo = findViewById(R.id.tvMyProfileMobileNo);
         tvEmailId=findViewById(R.id.tvMyProfileEmailId);
         tvUsername=findViewById(R.id.tvMyProfileUsername);
+        acbtnUpdateProfile = findViewById(R.id.acbtnMyProfileupdateprofile);
 
         preferences= PreferenceManager.getDefaultSharedPreferences(MyProfileActivity.this);
         strUsername=preferences.getString("username","");
+
+
     }
 
     @Override
@@ -71,7 +76,7 @@ public class MyProfileActivity extends AppCompatActivity {
 
         params.put("username",strUsername);
 
-        client.post("http://192.168.43.102:80/FoodizAPI/mydetails.php",params, new JsonHttpResponseHandler(){
+        client.post("http://192.168.113.99:80/FoodizAPI/mydetails.php",params, new JsonHttpResponseHandler(){
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -94,12 +99,24 @@ public class MyProfileActivity extends AppCompatActivity {
                         progressDialog.dismiss();
 
                         Glide.with(MyProfileActivity.this)
-                                .load("http://192.168.43.102:80/FoodizAPI/images/"+image)
+                                .load("http://192.168.113.99:80/FoodizAPI/images/"+image)
                                 .diskCacheStrategy(DiskCacheStrategy.NONE)  // Disable disk caching
                                 .skipMemoryCache(true)  // Skip memory caching
                                 .error(R.drawable.icon_menu_category)
                                 .placeholder(R.drawable.icon_menu_home)
                                 .into(ivProfilePhoto);
+
+                        acbtnUpdateProfile.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent i = new Intent(MyProfileActivity.this, UpdateProfileActivity.class);
+                                i.putExtra("name", name);
+                                i.putExtra("mobileno", mobileno);
+                                i.putExtra("emailid", emailid);
+                                i.putExtra("username", username);
+                                startActivity(i);
+                            }
+                        });
                     }
                 } catch (JSONException e) {
                     throw new RuntimeException(e);

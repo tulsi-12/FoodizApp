@@ -22,7 +22,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/acbtnMyProfileeditprofiele"
-        android:text="Edit Profile"
+        android:text="Change Photo"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -93,7 +93,18 @@
         android:gravity="center_vertical"
         android:paddingLeft="10sp"
         />
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/acbtnMyProfileupdateprofile"
+        android:text="Update Profile"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/adamina"
+        android:background="@drawable/btn_bg_shape"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
 
 
 </LinearLayout>

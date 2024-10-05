@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProfileActivity"
+    android:orientation="vertical"
+    android:layout_margin="16sp"
+    android:gravity="center">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/etUpdateProfileName"
+        android:hint="Name"
+        android:background="@drawable/et_bg_shape"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/almendra"
+        android:paddingLeft="8sp"
+        android:inputType="text"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/etUpdateProfileMobileno"
+        android:hint="Mobile no"
+        android:background="@drawable/et_bg_shape"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/almendra"
+        android:paddingLeft="8sp"
+        android:inputType="number"
+        android:enabled="false"
+        android:layout_marginTop="8sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/etUpdateProfileEmailid"
+        android:hint="Email id"
+        android:background="@drawable/et_bg_shape"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/almendra"
+        android:paddingLeft="8sp"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="8sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/etUpdateProfileUsername"
+        android:hint="Username"
+        android:enabled="false"
+        android:background="@drawable/et_bg_shape"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/almendra"
+        android:paddingLeft="8sp"
+        android:inputType="text"
+        android:layout_marginTop="8sp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnUpdateProfile"
+        android:text="Update Profile"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="@font/almendra"
+        android:layout_marginTop="16sp"
+        android:background="@drawable/btn_bg_shape"/>
+
+
+</LinearLayout>

@@ -141,7 +141,7 @@ public class OTPVerificationActivity extends AppCompatActivity {
         params.put("username",strUsername);
         params.put("password",strPassword);
 
-        client.post("http://192.168.164.99:80/FoodizAPI/userregister.php",params,new JsonHttpResponseHandler(){
+        client.post("http://192.168.113.99:80/FoodizAPI/userregister.php",params,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);

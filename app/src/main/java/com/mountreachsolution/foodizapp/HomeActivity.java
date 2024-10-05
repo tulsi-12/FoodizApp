@@ -1,6 +1,7 @@
 package com.mountreachsolution.foodizapp;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,7 +19,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -103,8 +103,32 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             } else if (item.getItemId()==R.id.myProfileHomeMenu) {
                 Intent i = new Intent(HomeActivity.this,MyProfileActivity.class);
                 startActivity(i);
+            } else if (item.getItemId()==R.id.logoutHomeMenu) {
+
+                logout();
             }
-            return true;
+        return true;
+    }
+
+    private void logout() {
+        android.app.AlertDialog.Builder ad = new AlertDialog.Builder(HomeActivity.this);
+        ad.setTitle("FoodizApp");
+        ad.setMessage("Are You Sure to Logout");
+        ad.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.cancel();
+            }
+        });
+        ad.setNegativeButton("Logout", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
+                editor.putBoolean("isLogin", false).commit();
+                startActivity(intent);
+            }
+        }).create().show();
     }
 
     HomeFragment homeFragment = new HomeFragment();

@@ -75,7 +75,7 @@ public class SetupNewPasswordActivity extends AppCompatActivity {
         params.put("mobileno","8208187488");
         params.put("password",etnewPassword.getText().toString());
 
-        client.post("http://192.168.164.99:80/FoodizAPI/changepassword.php",params,new JsonHttpResponseHandler()
+        client.post("http://192.168.113.99:80/FoodizAPI/changepassword.php",params,new JsonHttpResponseHandler()
         {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
